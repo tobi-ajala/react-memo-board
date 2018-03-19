@@ -9,9 +9,21 @@ class App extends Component {
     super(props);
     this.state = {
       memos: [
-        {id: 0, text: "Make dinner tonight!"},
-        {id: 1, text: "Fold the laundry."},
-        {id: 2, text: "Learn to make a React app!"}
+        {
+          id: 0,
+          value: "Make dinner tonight!",
+          description: 'Today we will have rice and chicken for dinner'
+        },
+        {
+          id: 1,
+          value: "Fold the laundry.",
+          description: "Get my stuff done"
+        },
+        {
+          id: 2,
+          value: "Learn to make a React app!",
+          description: 'React with Redux'
+        }
       ],
       nextId: 3
     };
@@ -20,9 +32,9 @@ class App extends Component {
     this.removeMemo = this.removeMemo.bind(this);
   }
 
-  addMemo(memoText) {
+  addMemo(memo) {
     let memos = this.state.memos.slice();
-    memos.push({id: this.state.nextId, text: memoText});
+    memos.push({id: this.state.nextId, value: memo.value, description: memo.description});
     this.setState({
       memos: memos,
       nextId: ++this.state.nextId
@@ -40,7 +52,7 @@ class App extends Component {
       <div className="App">
         <div className="memo-wrapper">
           <Header />
-          <MemoInput memoText="" addMemo={this.addMemo} />
+          <MemoInput addMemo={this.addMemo} />
           <ul>
             {
               this.state.memos.map((memo) => {

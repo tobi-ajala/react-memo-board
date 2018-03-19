@@ -12,7 +12,9 @@ export default class MemoItem extends React.Component {
   render() {
     return (
       <div className="memoWrapper">
-        <button className="removeMemo" onClick={(e)=> this.removeMemo(this.props.id) }>remove</button>{this.props.memo.text}
+        <button className="removeMemo" onClick={(e)=> this.removeMemo(this.props.id) }>remove</button>
+        {this.props.memo.value}
+        <p>{this.props.memo.description}</p>
       </div>
     );
   }
