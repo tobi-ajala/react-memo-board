@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/header';
-import TodoInput from './components/todoInput';
-import TodoItem from './components/todoItem';
+import MemoInput from './components/memoInput';
+import MemoItem from './components/memoItem';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: [
+      memos: [
         {id: 0, text: "Make dinner tonight!"},
         {id: 1, text: "Fold the laundry."},
         {id: 2, text: "Learn to make a React app!"}
@@ -16,35 +16,35 @@ class App extends Component {
       nextId: 3
     };
 
-    this.addTodo = this.addTodo.bind(this);
-    this.removeTodo = this.removeTodo.bind(this);
+    this.addMemo = this.addMemo.bind(this);
+    this.removeMemo = this.removeMemo.bind(this);
   }
 
-  addTodo(todoText) {
-    let todos = this.state.todos.slice();
-    todos.push({id: this.state.nextId, text: todoText});
+  addMemo(memoText) {
+    let memos = this.state.memos.slice();
+    memos.push({id: this.state.nextId, text: memoText});
     this.setState({
-      todos: todos,
+      memos: memos,
       nextId: ++this.state.nextId
     });
   }
 
-  removeTodo(id) {
+  removeMemo(id) {
     this.setState({
-        todos: this.state.todos.filter((todo, index) => todo.id !== id)
+        memos: this.state.memos.filter((memo, index) => memo.id !== id)
       });
   }
 
   render() {
     return (
       <div className="App">
-        <div className="todo-wrapper">
+        <div className="memo-wrapper">
           <Header />
-          <TodoInput todoText="" addTodo={this.addTodo} />
+          <MemoInput memoText="" addMemo={this.addMemo} />
           <ul>
             {
-              this.state.todos.map((todo) => {
-                return <TodoItem todo={todo} key={todo.id} id={todo.id} removeTodo={this.removeTodo}/>
+              this.state.memos.map((memo) => {
+                return <MemoItem memo={memo} key={memo.id} id={memo.id} removeMemo={this.removeMemo}/>
               })
             }
           </ul>
