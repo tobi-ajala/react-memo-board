@@ -1,4 +1,5 @@
 import React from 'react';
+import './memo.css';
 
 export default class MemoInput extends React.Component {
   constructor(props) {
@@ -27,11 +28,17 @@ export default class MemoInput extends React.Component {
 
   render() {
     return (
-      <div>
-        <h5>title</h5>
+      <div className="add-memo">
+        <p>description</p>
+        <br />
         <input type="text" name="value" value={this.state.value} onChange={this.handleChange} />
-        <h5>description</h5>
-        <input type="text" name="description" value={this.state.description} onChange={this.handleChange} />
+        <br />
+        <br />
+        <p>description</p>
+        <br />
+        <textarea type="text" name="description" rows="10" value={this.state.description} onChange={this.handleChange} />
+        <br />
+        <br />
         <button className="add" onClick={() => this.addMemo()}>Submit</button>
       </div>
     );

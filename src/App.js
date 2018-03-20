@@ -3,6 +3,8 @@ import './App.css';
 import Header from './components/header';
 import MemoInput from './components/memoInput';
 import MemoItem from './components/memoItem';
+import './components/memo.css';
+
 
 class App extends Component {
   constructor(props) {
@@ -11,18 +13,18 @@ class App extends Component {
       memos: [
         {
           id: 0,
-          value: "Make dinner tonight!",
-          description: 'Today we will have rice and chicken for dinner'
+          value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          description: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen."
         },
         {
           id: 1,
           value: "Fold the laundry.",
-          description: "Get my stuff done"
+          description: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen."
         },
         {
           id: 2,
           value: "Learn to make a React app!",
-          description: 'React with Redux'
+          description: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen."
         }
       ],
       nextId: 3
@@ -53,13 +55,13 @@ class App extends Component {
         <div className="memo-wrapper">
           <Header />
           <MemoInput addMemo={this.addMemo} />
-          <ul>
+          <div className="memo-tiles">
             {
               this.state.memos.map((memo) => {
                 return <MemoItem memo={memo} key={memo.id} id={memo.id} removeMemo={this.removeMemo}/>
               })
             }
-          </ul>
+          </div>
         </div>
       </div>
     );

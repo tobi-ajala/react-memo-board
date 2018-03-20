@@ -1,31 +1,55 @@
 /*input*/
 .memo-wrapper {
   font-size: 14px;
+  /* border: 1px solid green; */
+  height: auto;
 }
 
-.to-complete {
-  width: 49%;
-  border: 1px solid yellow;
-  display: inline-block;
+.add-memo {
+  margin: 0 auto;
+  width: auto;
 }
 
-.memo-tile {
-  width: 49%;
-  border: 1px solid pink;
-  float: right;
-  display: inline-block;
-}
+/* .add-memo p {
+  /* margin: 0 auto;
+  width: 300px; */
+  /* border: 1px solid yellow; 
+} */
 
-input {
-  float: right;
-  width: 300px;
-  padding: 5px;
+input, textarea {
+  width: 600px;
+  padding: 8px;
   border-radius: 3px;
   outline: none;
   font-size: 14px;
+  resize: none;
+  border: 1px solid #D3D3D3;
 }
 
+.single-tile {
+  margin: 0 auto;
+  width: 300px;
+  border: 1px solid #D3D3D3;
+  border-radius: 10px;
+  text-align: left;
+  display: inline-block;
+  margin: 50px;
+}
 
+.tile {
+  padding: 15px 30px 15px 30px;
+}
+
+.title {
+  border-radius: 10px 10px 0 0;
+  background-color: #32557E;
+  color: #FFF;
+}
+
+.delete {
+  background-color: #F0F0F0;
+  color: #CE0B16;
+}
 
 
 
